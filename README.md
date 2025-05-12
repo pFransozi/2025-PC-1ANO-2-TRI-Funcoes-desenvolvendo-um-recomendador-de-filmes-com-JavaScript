@@ -47,6 +47,7 @@ Este projeto foi desenvolvido por estudantes do 1º ano do ensino médio e consi
 - Teste diferentes **valores de idade e preferências** para verificar os comportamentos do sistema.
 - Experimente **alterar cores e fontes** no `style.css` para deixar seu projeto mais atrativo.
 - Sempre **salve e compartilhe** seu projeto após cada aula para registrar sua evolução.
+- [Tutorial](tutorial.md)
 
 ## 🚀 Possíveis Melhorias
 
