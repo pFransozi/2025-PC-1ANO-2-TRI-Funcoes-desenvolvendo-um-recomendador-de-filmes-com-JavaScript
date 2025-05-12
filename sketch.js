@@ -8,42 +8,41 @@
 // ladrões de bicicleta, 12, drama
 // o menino que descobriu o vento, 14, drama
 
-let campoIdade;
-let campoFantasia;
-
 function setup() {
-  createCanvas(400, 400);
-  //É importante notar que o valor “15” indica que sempre quando iniciar o projeto, o valor 15 será o primeiro valor iniciado e que depois nós podemos alterar.
-  campoIdade = createInput("15");
-  //Lembre-se sempre que criar um elemento de visualização gráfica, você pode utilizar uma variável para armazenar as informações. Normalmente, essa variável é global.
-  campoFantasia = createCheckbox("Gosta de Fantaria?");
+    createCanvas(800, 400);
+    createSpan("Sua idade:");
+    campoIdade = createInput("5");
+    campoFantasia = createCheckbox(" Gosta de fantasia?");
 }
 
 function draw() {
-  background(220);
-  let idade = campoIdade.value();
-  let gostaDeFantasia = campoFantasia.checked();
-  let recomendacao = geraRecomendacao(idade, gostaDeFantasia);
-  text(recomendacao, width/2, height/2);
+    background("white");
+    let idade = campoIdade.value();
+    let gostaDeFantasia = campoFantasia.checked();
+    let recomendacao = geraRecomendacao(idade, gostaDeFantasia);
+
+    fill(color(76, 0, 115));
+    textAlign(CENTER, CENTER);
+    textSize(38);
+    text(recomendacao, width / 2, height / 2);
 }
 
-
-function geraRecomendacao(idade, gostoDeFantasia){
-  if (idade >= 10){
-    if (idade >= 14){
-      return "O menino que descobriu o vento";
-    }else{
-      if (gostoDeFantasia){
-        return "As aventuras de Pi";
-      }else{
-        return "Depois da chuva";
-      }
+function geraRecomendacao(idade, gostaDeFantasia) {
+    if (idade >= 10) {
+        if (idade >= 14) {
+            return "O menino que descobriu o vento";
+        } else {
+            if (gostaDeFantasia) {
+                return "As aventuras de pi";
+            } else {
+                return "Depois da chuva";
+            }
+        }
+    } else {
+        if (gostaDeFantasia) {
+            return "A viagem de chihiro";
+        } else {
+            return "O feitiço do tempo";
+        }
     }
-  }else{
-    if (gostaDeFantasia){
-      return "A viagem de Chihiro";
-    }else{
-      return "O feitiço do tempo";
-    }
-  }
 }
